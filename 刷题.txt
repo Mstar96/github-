@@ -151,11 +151,14 @@ LACP模式（Link Aggregation Control Protocol，链路聚合控制协议）：�
 非选择端口（Unselected ports）：这些端口没有被选中用于链路聚合，因此不参与数据转发。
 
 以太网数据帧中,Length\Type字段<=1500时候，代表数据字段长度（MTU是1500字节），大于1536（0X0600）时表示封装的上层协议类型
-0x0800：表示上层协议为IPv4。
-0x86DD：表示上层协议为IPv6。
-0x0806：表示上层协议为ARP（地址解析协议）。
-0x8864：表示上层协议为PPPoE（点对点协议以太网）
-0x8100 是 IEEE 802.1Q 的标志，表示该帧包含一个 VLAN Tag
+类型/长度值	含义
+0x0800	IPv4
+0x0806	ARP
+0x86DD	IPv6
+0x8100	VLAN Tag (802.1Q)
+0x8847	MPLS
+0x8848	MPLS (Extended)
+0x880B	PPP
 
 以太数据帧格式：
 | 前导码 | 帧头 | 目的MAC地址 | 源MAC地址 | 类型/长度 | 数据 | FCS |
