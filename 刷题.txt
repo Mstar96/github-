@@ -155,7 +155,7 @@ LACP模式（Link Aggregation Control Protocol，链路聚合控制协议）：�
 0x86DD：表示上层协议为IPv6。
 0x0806：表示上层协议为ARP（地址解析协议）。
 0x8864：表示上层协议为PPPoE（点对点协议以太网）
-0x8100:可能是trunk和hybrid类型
+0x8100 是 IEEE 802.1Q 的标志，表示该帧包含一个 VLAN Tag
 
 在以太网交换机中，Trunk、Access和Hybrid端口是三种不同的端口模式，它们对数据帧的处理方式各有特点：
 Trunk端口：
