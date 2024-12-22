@@ -157,6 +157,14 @@ LACP模式（Link Aggregation Control Protocol，链路聚合控制协议）：�
 0x8864：表示上层协议为PPPoE（点对点协议以太网）
 0x8100 是 IEEE 802.1Q 的标志，表示该帧包含一个 VLAN Tag
 
+以太数据帧格式：
+| 前导码 | 帧头 | 目的MAC地址 | 源MAC地址 | 类型/长度 | 数据 | FCS |
+前导码（Preamble）: 7 字节，帮助同步传输。
+帧头（Frame Header）: 包括目的 MAC 地址（6 字节）和源 MAC 地址（6 字节）。
+类型/长度（Type/Length）: 2 字节，表示上层协议类型或数据部分的长度。
+数据（Data）: 这个字段携带具体的有效负载数据。
+FCS（Frame Check Sequence）: 4 字节，CRC 校验码，用于数据完整性检测。
+
 在以太网交换机中，Trunk、Access和Hybrid端口是三种不同的端口模式，它们对数据帧的处理方式各有特点：
 Trunk端口：
 主要用于交换机之间的连接。
