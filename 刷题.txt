@@ -43,12 +43,12 @@ FULL状态表示邻接关系已经建立
 用LSU报文向邻居发送LSA
 用HELLO报文发现和维护邻居关系
 使用LSACK对接收到的LSU报文进行确认
-
 五种报文：HELLO、DD（数据库描述）、LSR（链路状态请求）、LSU（链路状态更新）、LSAck（链路状态确认），其中请求的、描述的就是路由器所拥有的链路状态报告LSA
-
 邻居状态机共有8种状态，分别是：
 Down、Attempt、Init、2-way、Exstart、Exchange、Loading、Full。
 在这些状态中，稳定状态包括Down、2-way和Full状态。
+通常，OSPF会选择路由器上最高的IP地址作为Router ID。
+如果路由器上所有的IP地址都相同，那么它会选择最高的环回接口IP地址（LoopBack interface）。
 
 
 
